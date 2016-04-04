@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -15,9 +16,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        View view = View.inflate(context, R.layout.activity_main, null);
+        setContentView(view);
         setNationalityDropdown();
-        setReserveButton();
+        setReserveButton(view);
     }
 
     public void setNationalityDropdown() {
@@ -32,32 +34,13 @@ public class MainActivity extends AppCompatActivity {
         dropdown.setOnItemSelectedListener(new SpinnerActivity());
     }
 
-    public void setReserveButton(){
+    public void setReserveButton(final View view){
         Button reserveButton = (Button) findViewById(R.id.reserveButton);
-
+        //final View mainView = this.getWindow().getDecorView();
         reserveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Dialog popup = new Dialog(context);
-                popup.setContentView(R.layout.activity_dialog);
-                popup.setTitle("Confirmation");
-
-                Button confirmButton = (Button) popup.findViewById(R.id.confirmButton);
-                Button cancelButton = (Button) popup.findViewById(R.id.cancelButton);
-
-                confirmButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        popup.dismiss();
-                    }
-                });
-
-                cancelButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        popup.dismiss();
-                    }
-                });
+                Dialog popup = new Popup().create(context, view);
 
                 popup.show();
             }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <TextView
         android:layout_width="match_parent"
@@ -20,19 +20,21 @@
         android:layout_marginBottom="5px">
 
         <TextView
-            android:layout_width="250px"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Name:"
             android:id="@+id/nameLabel"
-            android:layout_marginLeft="30px" />
+            android:layout_marginLeft="30px"
+            android:layout_weight="1" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
-            android:id="@+id/nameText" />
+            android:id="@+id/nameText"
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -44,19 +46,21 @@
         android:layout_marginBottom="5px">
 
         <TextView
-            android:layout_width="250px"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Age:"
             android:id="@+id/ageLabel"
-            android:layout_marginLeft="30px" />
+            android:layout_marginLeft="30px"
+            android:layout_weight="1" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
-            android:id="@+id/ageText" />
+            android:id="@+id/ageText"
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -67,19 +71,21 @@
         android:layout_marginTop="50px">
 
         <TextView
-            android:layout_width="250px"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Nationality:"
             android:id="@+id/nationalityLabel"
-            android:layout_marginLeft="30px" />
+            android:layout_marginLeft="30px"
+            android:layout_weight="1" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
-            android:id="@+id/nationalityText" />
+            android:id="@+id/nationalityText"
+            android:layout_weight="1" />
 
     </LinearLayout>
 
