@@ -2,11 +2,13 @@ package com.example.maroto.myapp;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 
@@ -40,9 +42,15 @@ public class MainActivity extends AppCompatActivity {
         reserveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dialog popup = new Popup().create(context, view);
+                EditText nameInput = (EditText) view.findViewById(R.id.nameInput);
+                EditText ageInput = (EditText) view.findViewById(R.id.ageInput);
+                Spinner modalityInput = (Spinner) view.findViewById(R.id.modalityInput);
 
-                popup.show();
+                Intent confirmationIntent = new Intent(context, ConfirmationActivity.class)  ;
+                confirmationIntent.putExtra("nameInput", nameInput.getText());
+                confirmationIntent.putExtra("ageInput", ageInput.getText());
+                confirmationIntent.putExtra("modalityInput", modalityInput.getSelectedItem().toString());
+                startActivity(confirmationIntent);
             }
         });
     }

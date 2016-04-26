@@ -39,7 +39,7 @@
     <Spinner
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:id="@+id/nationalityInput"
+        android:id="@+id/modalityInput"
         android:layout_marginTop="44dp"
         android:layout_below="@+id/ageInput"
         android:layout_toStartOf="@+id/title"
@@ -47,12 +47,47 @@
         android:layout_alignParentEnd="true"
         android:background="#efefef" />
 
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/modalityInput"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50px"
+        android:id="@+id/periodOptions">
+        <RadioButton android:id="@+id/morningRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Morning"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/afternoonRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Afternoon"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/nightRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Night"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Reserve"
         android:id="@+id/reserveButton"
-        android:layout_alignTop="@+id/nationalityInput"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="92dp" />
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/periodOptions"
+        android:layout_marginTop="50px" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignTop="@+id/title"
+        android:layout_alignEnd="@+id/title"
+        android:src="@drawable/olympics" />
+
 </RelativeLayout>
