@@ -1,6 +1,5 @@
 package com.example.maroto.myapp;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 EditText ageInput = (EditText) view.findViewById(R.id.ageInput);
                 Spinner modalityInput = (Spinner) view.findViewById(R.id.modalityInput);
 
-                Intent confirmationIntent = new Intent(context, ConfirmationActivity.class)  ;
+                Intent confirmationIntent = new Intent(context, ConfirmationActivity.class);
                 confirmationIntent.putExtra("nameInput", nameInput.getText());
                 confirmationIntent.putExtra("ageInput", ageInput.getText());
                 confirmationIntent.putExtra("modalityInput", modalityInput.getSelectedItem().toString());
