@@ -20,7 +20,7 @@ public class Popup {
         TextView nationalityText = (TextView) popup.findViewById(R.id.nationalityText);
         EditText nameInput = (EditText) mainView.findViewById(R.id.nameInput);
         EditText ageInput = (EditText) mainView.findViewById(R.id.ageInput);
-        Spinner nationalityInput = (Spinner) mainView.findViewById(R.id.nationalityInput);
+        Spinner nationalityInput = (Spinner) mainView.findViewById(R.id.modalityInput);
         Button confirmButton = (Button) popup.findViewById(R.id.confirmButton);
         Button cancelButton = (Button) popup.findViewById(R.id.cancelButton);
 

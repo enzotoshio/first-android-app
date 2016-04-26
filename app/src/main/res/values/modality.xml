@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="nationality_array">
+    <string-array name="modality_array">
         <item>Brazil</item>
         <item>USA</item>
         <item>Canada</item>

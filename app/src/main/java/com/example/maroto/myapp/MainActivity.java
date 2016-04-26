@@ -2,12 +2,12 @@ package com.example.maroto.myapp;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,14 +18,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         View view = View.inflate(context, R.layout.activity_main, null);
         setContentView(view);
-        setNationalityDropdown();
+        setModalityDropdown();
         setReserveButton(view);
     }
 
-    public void setNationalityDropdown() {
-        Spinner dropdown = (Spinner) findViewById(R.id.nationalityInput);
+    public void setModalityDropdown() {
+        Spinner dropdown = (Spinner) findViewById(R.id.modalityInput);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.nationality_array, android.R.layout.simple_spinner_item);
+                R.array.modality_array, android.R.layout.simple_spinner_item);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -45,5 +45,21 @@ public class MainActivity extends AppCompatActivity {
                 popup.show();
             }
         });
+    }
+
+    public void onRadioButtonClicked(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+
+        switch(view.getId()) {
+            case R.id.morningRadio:
+                if (checked)
+                    break;
+            case R.id.afternoonRadio:
+                if (checked)
+                    break;
+            case R.id.nightRadio:
+                if (checked)
+                    break;
+        }
     }
 }
